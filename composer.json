@@ -1,0 +1,31 @@
+{
+    "name": "inked7/expand",
+    "description": "基础代码扩展包",
+    "keywords": ["expand", "inked7"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "inked7",
+            "email": "inkkktop@163.com",
+            "homepage": "https://github.com/inked7"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "ext-fileinfo": "*",
+        "ext-simplexml": "*",
+        "league/fractal": "^0.20.1",
+        "ramsey/uuid": "*",
+        "symfony/process": "*",
+        "nelexa/zip": "^4.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "Inked7\\Expand\\": "src"
+        }
+    }
+}
