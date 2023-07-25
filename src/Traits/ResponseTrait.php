@@ -138,7 +138,7 @@ trait ResponseTrait
                 $res = ['errcode' => $err_code, 'errmsg' => $err_msg, 'data' => $data,];
                 break;
             default:
-                $res = ['err_code' => $err_code, 'err_msg' => $err_msg, 'data' => $data,];
+                $res = ['code' => $err_code, 'msg' => $err_msg, 'data' => $data,];
                 break;
         }
 
@@ -169,7 +169,7 @@ trait ResponseTrait
                 $res = ['errcode' => $err_code, 'errmsg' => $err_msg, 'data' => $data,];
                 break;
             default:
-                $res = ['err_code' => $err_code, 'err_msg' => $err_msg, 'data' => $data,];
+                $res = ['code' => $err_code, 'msg' => $err_msg, 'data' => $data,];
                 break;
         }
 
