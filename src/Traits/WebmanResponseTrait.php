@@ -8,7 +8,7 @@ use Inked7\Expand\Utils\Response;
 
 trait WebmanResponseTrait
 {
-    public static $responseCodeKey = 1; // 1:code msg、2:code message、3:err_code err_msg、errcode errmsg
+    public static $responseCodeKey = 3; // 1:code msg、2:code message、3:err_code err_msg、errcode errmsg
 
     public static function setResponseCodeKey(int $responseCodeKey = 1)
     {
@@ -85,7 +85,7 @@ trait WebmanResponseTrait
         ]);
     }
 
-    public function success($data = [], $err_msg = 'success', $err_code = 200, $headers = [])
+    public function success($data = [], $err_msg = 'success', $err_code = 1, $headers = [])
     {
         if (is_string($data)) {
             $err_code = is_string($err_msg) ? $err_code : $err_msg;
@@ -137,7 +137,7 @@ trait WebmanResponseTrait
         );
     }
 
-    public function fail($err_msg = 'unknown error', $err_code = 400, $data = [], $headers = [])
+    public function fail($err_msg = 'unknown error', $err_code = 0, $data = [], $headers = [])
     {
         switch (ResponseTrait::$responseCodeKey) {
             case 1:
@@ -172,7 +172,7 @@ trait WebmanResponseTrait
             );
         }
 
-        return $this->success($data, $err_msg ?: 'unknown error', $err_code ?: 500, $headers);
+        return $this->success($data, $err_msg ?: 'unknown error', $err_code ?: 0, $headers);
     }
 
     public function reportableHandle(\Throwable $e)
