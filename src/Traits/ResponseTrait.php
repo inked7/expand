@@ -8,7 +8,7 @@ use Inked7\Expand\Utils\Response;
 
 trait ResponseTrait
 {
-    public static $responseCodeKey = 1; // 1:code msg、2:code message、3:err_code err_msg、errcode errmsg
+    public static $responseCodeKey = 3; // 1:code msg、2:code message、3:err_code err_msg、errcode errmsg
 
     public static function setResponseCodeKey(int $responseCodeKey = 1)
     {
